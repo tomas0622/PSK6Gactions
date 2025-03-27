@@ -7,15 +7,12 @@ on:
             - main
 jobs:
     test:
-        run-on: ubuntu-latest
-
+        runs-on: ubuntu-latest
         steps:
             - name: Chekout de ramas del codigo
-             uses: actions/checkout@v3
-            
+              uses: actions/checkout@v3
             - name: Instalar K6
-             run: curl -s https://packagecloud.io/install/repositories/grafana/stable/script.deb.sh |sudo bash
+              run: curl -s https://packagecloud.io/install/repositories/grafana/stable/script.deb.sh |sudo bash
                 sudo apt-get install k6
-
             - name: Ejecución de pruebas de carga
-             run: k6 run test.js
+              run: k6 run test.js
