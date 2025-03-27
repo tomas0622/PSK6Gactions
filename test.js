@@ -7,7 +7,7 @@ export let options = {
 }
 
 export default function () {
-    let res = http.get('https://test-api.k6.io/public/cocodriles/')
+    let res = http.get('https://test-api.k6.io/public/crocodiles/')
     check(res, {
         "Es status 200": (r) => r.status === 200,
         "Respuesta es menos de 500ms": (r) => r.timings.duration < 500,
